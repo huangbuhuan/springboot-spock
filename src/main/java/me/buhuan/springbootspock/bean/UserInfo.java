@@ -1,6 +1,7 @@
 package me.buhuan.springbootspock.bean;
 
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 
@@ -10,6 +11,7 @@ import javax.persistence.*;
  * @since 2017/12/10
  */
 @Data
+@Accessors(chain = true)
 @Entity
 @Table(name = "t01_user")
 public class UserInfo {
