@@ -18,7 +18,7 @@ public class UserInfoController {
 	private UserInfoService userInfoService;
 	
 	@GetMapping("/{userId}")
-	public UserInfo findbyUserId(@PathVariable("userId") Long userId) {
+	public UserInfo findByUserId(@PathVariable("userId") Long userId) {
 		return userInfoService.findByUserId(userId);
 	}
 	

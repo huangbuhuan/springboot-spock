@@ -2,7 +2,6 @@ package me.buhuan.controller.user;
 
 import me.buhuan.controller.BaseControllerSpec
 import me.buhuan.springbootspock.bean.UserInfo
-import me.buhuan.springbootspock.dao.UserInfoRepository
 import org.springframework.jdbc.datasource.init.DatabasePopulatorUtils
 import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator
 
@@ -61,5 +60,9 @@ class UserControllerSpec extends BaseControllerSpec {
 		userInfo || id
 		new UserInfo(userId: 1003, name: "ls", sex: 1, address: "北京") || 3
 		new UserInfo(userId: 1004, name: "ww", sex: 1, address: "广州") || 4
+	}
+
+	def "Test Rest Delete UserInfo"() {
+
 	}
 }
