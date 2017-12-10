@@ -9,4 +9,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @since 2017/12/10
  */
 public interface UserInfoRepository extends JpaRepository<UserInfo, Long> {
+	
+	UserInfo findByUserId(Long userId);
+	
 }
