@@ -17,7 +17,7 @@ import javax.persistence.*;
 public class UserInfo {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue
 	private Long id;
 	
 	private Long userId;

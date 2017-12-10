@@ -4,6 +4,7 @@ import me.buhuan.controller.BaseControllerSpec
 import me.buhuan.springbootspock.bean.UserInfo
 import org.springframework.jdbc.datasource.init.DatabasePopulatorUtils
 import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator
+import spock.lang.Unroll
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 
@@ -27,10 +28,10 @@ class UserControllerSpec extends BaseControllerSpec {
 
 	def "Test REST Find By User Id"() {
 		given:
-		def userId = 1001
+		def userId = 10001
 
 		when:
-		def result = get("user/${userId}")
+		def result = get("/user/${userId}")
 
 
 		then:
@@ -45,7 +46,7 @@ class UserControllerSpec extends BaseControllerSpec {
 
 	def "Test REST Save UserInfo"() {
 		when:
-		def result = post("user", userInfo)
+		def result = post("/user", userInfo)
 
 		then:
 		result.andExpect(status().isOk())
@@ -58,8 +59,8 @@ class UserControllerSpec extends BaseControllerSpec {
 
 		where:
 		userInfo || id
-		new UserInfo(userId: 1003, name: "ls", sex: 1, address: "北京") || 3
-		new UserInfo(userId: 1004, name: "ww", sex: 1, address: "广州") || 4
+		new UserInfo(id: 3, userId: 10003, name: "ls", sex: 1, address: "北京") || 3
+		new UserInfo(id: 4, userId: 10004, name: "ww", sex: 1, address: "广州") || 4
 	}
 
 	def "Test Rest Delete UserInfo"() {
