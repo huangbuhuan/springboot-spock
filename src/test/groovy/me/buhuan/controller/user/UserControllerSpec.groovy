@@ -1,6 +1,7 @@
 package me.buhuan.controller.user;
 
-import me.buhuan.controller.BaseControllerSpecification
+import me.buhuan.controller.BaseControllerSpec
+import me.buhuan.springbootspock.bean.UserInfo
 import org.springframework.jdbc.datasource.init.DatabasePopulatorUtils
 import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator
 
@@ -12,7 +13,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @version 1.0.0
  * @since 2017/12/10
  */
-class UserControllerSpecification extends BaseControllerSpecification {
+class UserControllerSpec extends BaseControllerSpec {
 
 	void setup() {
 		ResourceDatabasePopulator populate =
@@ -24,7 +25,7 @@ class UserControllerSpecification extends BaseControllerSpecification {
 
 	}
 
-	def "Test REST Find By User Id" () {
+	def "Test REST Find By User Id"() {
 		given:
 		def userId = 1001
 
@@ -40,5 +41,9 @@ class UserControllerSpecification extends BaseControllerSpecification {
 
 		then:
 		res.name == 'hbh'
+	}
+
+	def "Test REST Save userInfo"() {
+		
 	}
 }

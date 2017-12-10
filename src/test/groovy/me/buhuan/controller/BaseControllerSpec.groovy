@@ -29,7 +29,7 @@ import javax.sql.DataSource
 @WebAppConfiguration
 @SpringBootTest(classes = SpringbootSpockApplication.class, webEnvironment = SpringBootTest.WebEnvironment.MOCK)
 @Transactional
-class BaseControllerSpecification extends Specification {
+class BaseControllerSpec extends Specification {
 
 	@Shared
 	protected MockMvc mockMvc
